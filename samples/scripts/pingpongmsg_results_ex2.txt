@@ -1,0 +1,60 @@
+array - agent 0 leaders - 0:  ( 3,3)
+array - agent 0agents - 0:  ( 3,3)
+array - agent 0agents - 1:  ( 14,3)
+array - agent 0agents - 2:  ( 25,20)
+array - agent 0agents - 3:  ( 26,8)
+array - agent 1agents - 0:  ( 2,27)
+array - agent 1agents - 1:  ( 14,3)
+array - agent 1agents - 2:  ( 25,20)
+array - agent 1agents - 3:  ( 26,8)
+array - agent 2 leaders - 0:  ( 3,3)
+array - agent 2agents - 0:  ( 2,27)
+array - agent 2agents - 1:  ( 3,3)
+array - agent 2agents - 2:  ( 25,20)
+array - agent 2agents - 3:  ( 26,8)
+array - agent 3 leaders - 0:  ( 3,3)
+array - agent 3agents - 0:  ( 2,27)
+array - agent 3agents - 1:  ( 3,3)
+array - agent 3agents - 2:  ( 14,3)
+array - agent 3agents - 3:  ( 26,8)
+array - agent 4 leaders - 0:  ( 3,3)
+array - agent 4agents - 0:  ( 2,27)
+array - agent 4agents - 1:  ( 3,3)
+array - agent 4agents - 2:  ( 14,3)
+array - agent 4agents - 3:  ( 25,20)
+messages -agent 0msgs recieved last turn - 0:  - from: 1 - key: 3 content: kardeslerim bakin bunlar cehapenin oyunu
+messages -leader 1msgs recieved last turn - 0:  - from: 0 - key: 3 content: merhabaaa
+messages -leader 1msgs recieved last turn - 1:  - from: 0 - key: 3 content: hulooog
+messages -leader 1msgs recieved last turn - 2:  - from: 2 - key: 3 content: hulooog
+messages -leader 1msgs recieved last turn - 3:  - from: 3 - key: 3 content: hulooog
+messages -leader 1msgs recieved last turn - 4:  - from: 4 - key: 3 content: hulooog
+messages -agent 2msgs recieved last turn - 0:  - from: 0 - key: 3 content: merhabaaa
+messages -agent 2msgs recieved last turn - 1:  - from: 1 - key: 3 content: kardeslerim bakin bunlar cehapenin oyunu
+messages -agent 3msgs recieved last turn - 0:  - from: 0 - key: 3 content: merhabaaa
+messages -agent 3msgs recieved last turn - 1:  - from: 1 - key: 3 content: kardeslerim bakin bunlar cehapenin oyunu
+messages -agent 4msgs recieved last turn - 0:  - from: 0 - key: 3 content: merhabaaa
+messages -agent 4msgs recieved last turn - 1:  - from: 1 - key: 3 content: kardeslerim bakin bunlar cehapenin oyunu
+messages -agent 0msgs recieved last turn - 0:  - from: 1 - key: 2 content: kardeslerim bakin bunlar cehapenin oyunu
+messages -leader 1msgs recieved last turn - 0:  - from: 0 - key: 2 content: kimse yok mu :0
+messages -leader 1msgs recieved last turn - 1:  - from: 0 - key: 2 content: hulooog
+messages -leader 1msgs recieved last turn - 2:  - from: 2 - key: 2 content: hulooog
+messages -leader 1msgs recieved last turn - 3:  - from: 3 - key: 2 content: hulooog
+messages -leader 1msgs recieved last turn - 4:  - from: 4 - key: 2 content: hulooog
+messages -agent 2msgs recieved last turn - 0:  - from: 0 - key: 2 content: kimse yok mu :0
+messages -agent 2msgs recieved last turn - 1:  - from: 1 - key: 2 content: kardeslerim bakin bunlar cehapenin oyunu
+messages -agent 3msgs recieved last turn - 0:  - from: 0 - key: 2 content: kimse yok mu :0
+messages -agent 3msgs recieved last turn - 1:  - from: 1 - key: 2 content: kardeslerim bakin bunlar cehapenin oyunu
+messages -agent 4msgs recieved last turn - 0:  - from: 0 - key: 2 content: kimse yok mu :0
+messages -agent 4msgs recieved last turn - 1:  - from: 1 - key: 2 content: kardeslerim bakin bunlar cehapenin oyunu
+messages -agent 0msgs recieved last turn - 0:  - from: 1 - key: 1 content: kardeslerim bakin bunlar cehapenin oyunu
+messages -leader 1msgs recieved last turn - 0:  - from: 0 - key: 1 content: olum ses verin
+messages -leader 1msgs recieved last turn - 1:  - from: 0 - key: 1 content: hulooog
+messages -leader 1msgs recieved last turn - 2:  - from: 2 - key: 1 content: hulooog
+messages -leader 1msgs recieved last turn - 3:  - from: 3 - key: 1 content: hulooog
+messages -leader 1msgs recieved last turn - 4:  - from: 4 - key: 1 content: hulooog
+messages -agent 2msgs recieved last turn - 0:  - from: 0 - key: 1 content: olum ses verin
+messages -agent 2msgs recieved last turn - 1:  - from: 1 - key: 1 content: kardeslerim bakin bunlar cehapenin oyunu
+messages -agent 3msgs recieved last turn - 0:  - from: 0 - key: 1 content: olum ses verin
+messages -agent 3msgs recieved last turn - 1:  - from: 1 - key: 1 content: kardeslerim bakin bunlar cehapenin oyunu
+messages -agent 4msgs recieved last turn - 0:  - from: 0 - key: 1 content: olum ses verin
+messages -agent 4msgs recieved last turn - 1:  - from: 1 - key: 1 content: kardeslerim bakin bunlar cehapenin oyunu
