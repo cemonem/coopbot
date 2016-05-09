@@ -1,8 +1,10 @@
 package com.cemonem.coopbot;
 
+import java.awt.FileDialog;
 import java.io.File;
 
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import com.badlogic.gdx.Game;
@@ -57,15 +59,16 @@ public class MenuScreen implements Screen {
 			
 			@Override
 			public void changed(ChangeEvent event, Actor actor) {
-				JFileChooser fc = new JFileChooser();
-				fc.setFileFilter(new FileNameExtensionFilter("PNG File", "png","PNG"));
 				
-				int returnVal = fc.showOpenDialog(null);
-				if(returnVal == JFileChooser.APPROVE_OPTION)
+			    JFrame frame = new JFrame();
+			    FileDialog d = new FileDialog(frame);
+			    d.setTitle("Pick a PNG File");
+			    d.setVisible(true);
+				if(d.getFile() != "null")
 				{
-					mapPath = fc.getSelectedFile().getAbsolutePath();
+					mapPath = d.getDirectory() + d.getFile();
 					prefs.putString("mapPath",mapPath);
-					mapLabel.setText(fc.getSelectedFile().getName());
+					mapLabel.setText(d.getFile());
 				}
 			}
 		});
@@ -81,15 +84,16 @@ public class MenuScreen implements Screen {
 			
 			@Override
 			public void changed(ChangeEvent event, Actor actor) {
-				JFileChooser fc = new JFileChooser();
-				fc.setFileFilter(new FileNameExtensionFilter("Script File", "js"));
 				
-				int returnVal = fc.showOpenDialog(null);
-				if(returnVal == JFileChooser.APPROVE_OPTION)
+			    JFrame frame = new JFrame();
+			    FileDialog d = new FileDialog(frame);
+			    d.setTitle("Pick a JS File");
+			    d.setVisible(true);
+				if(d.getFile() != "null")
 				{
-					scriptPath = fc.getSelectedFile().getAbsolutePath();
-					prefs.putString("scriptPath",scriptPath);
-					scriptLabel.setText(fc.getSelectedFile().getName());
+					scriptPath = d.getDirectory() + d.getFile();
+					prefs.putString("mapPath",scriptPath);
+					scriptLabel.setText(d.getFile());
 				}
 			}
 		});
