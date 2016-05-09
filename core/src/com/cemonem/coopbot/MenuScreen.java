@@ -103,7 +103,7 @@ public class MenuScreen implements Screen {
 			@Override
 			public void changed(ChangeEvent event, Actor actor) {
 				prefs.flush();
-				if(mapPath != "" && scriptPath != "") game.setScreen(new SimulationScreen(mapPath,scriptPath));
+				if(mapPath != "" && scriptPath != "") game.setScreen(new SimulationScreen(mapPath,scriptPath,skin));
 			}
 		});
 		table.add(startButton);
@@ -144,7 +144,6 @@ public class MenuScreen implements Screen {
 	@Override
 	public void dispose() {
 		stage.dispose();
-		skin.dispose();
 	}
 
 }

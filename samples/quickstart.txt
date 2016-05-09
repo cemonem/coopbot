@@ -84,8 +84,11 @@ class Agent
 	public Array<Pair> getTargets(); // returns the positions of all targets in the map.
 	public void broadcastMsg(int key,NativeObject val); // broadcasts the message to all agents except the agent the method is being called from. The messages will be received in the next turn.
 	public void broadcastMsgToLeaders(int key,NativeObject val); // broadcasts the message to all leaders except the agent the method is being called from (if it is a leader). The messages will be received in the next turn.
-	public void updateBlockVal(int x,int y,float h); // This method can be used to visually aid the simulation. The h value is assigned to the opacity of the block color at the coordinates (x,y). The method has no effect on the simulation mechanics.
+	public void setLabel(int x,int y,String h); // This method can be used to visually aid the simulation. The string is assigned to be shown on block.
+	public void showLabel(int x,int y,boolean toggle); // This method enables or disables the label on x,y coordinate.
 }
+
+- common object is shared among agents, can be used to hold common data. However it's not buffered like messages between agents therefore the ordering of the agents may affect the simulation, beware.
 
 -------constructing maps-----------
 the maps can be constructed with any size of an image file. Every pixel is realized as a block in the simulation according to its RGB value:

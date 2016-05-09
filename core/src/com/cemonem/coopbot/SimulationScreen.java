@@ -14,6 +14,7 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
@@ -28,10 +29,14 @@ public class SimulationScreen implements Screen {
 	Simulation simulation;
 	Texture tile;
 	OrthographicCamera camera;
+	Skin skin;
 	
-	public SimulationScreen(String mapPath, String scriptPath) {
+	public SimulationScreen(String mapPath, String scriptPath,Skin skin) {
 		this.mapPath = mapPath;
 		this.scriptPath = scriptPath;
+		this.skin = skin;
+		Gdx.app.log("SKIN",skin+"");
+		Gdx.app.log("IS NULL",(skin == null) + "");
 	}
 	
 
@@ -43,7 +48,7 @@ public class SimulationScreen implements Screen {
 		{
 			tile = new Texture(Gdx.files.internal("tile.png"));
 			Pixmap pixmap = new Pixmap(Gdx.files.absolute(mapPath));
-			simulation = new Simulation(pixmap, tile,scriptPath);
+			simulation = new Simulation(pixmap, tile,scriptPath,skin);
 			pixmap.dispose();
 			camera = new OrthographicCamera(16*pixmap.getWidth(),16*pixmap.getHeight());
 			camera.translate(16*pixmap.getWidth()/2.0f, 16*pixmap.getHeight()/2.0f);;
@@ -134,6 +139,7 @@ public class SimulationScreen implements Screen {
 	public void dispose() {
 		tile.dispose();
 		batch.dispose();
+		skin.dispose();
 
 	}
 

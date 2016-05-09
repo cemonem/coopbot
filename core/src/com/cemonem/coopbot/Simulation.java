@@ -3,7 +3,6 @@ package com.cemonem.coopbot;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.Reader;
 
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.Function;
@@ -12,13 +11,12 @@ import org.mozilla.javascript.Scriptable;
 import org.mozilla.javascript.ScriptableObject;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.Array;
-import com.badlogic.gdx.utils.Queue;
 
 public class Simulation {
 	
@@ -29,10 +27,11 @@ public class Simulation {
 	Array<Pair> targets;
 	Array<Agent> leaders;
 	ScriptManager scriptManager;
+	Skin skin;
 	
 	public static int nextAgentId = 0;
 	
-	public Simulation(Pixmap pixmap,Texture texture,String scriptPath) {
+	public Simulation(Pixmap pixmap,Texture texture,String scriptPath,Skin skin) {
 		agents = new Array<Simulation.Agent>();
 		leaders = new Array<Agent>();
 		this.texture = texture;
@@ -40,6 +39,7 @@ public class Simulation {
 		height = pixmap.getHeight();
 		targets = new Array<Simulation.Pair>();
 		grid = new Block[width][height];
+		this.skin = skin;
 
 		build(pixmap);
 		scriptManager = new ScriptManager(scriptPath);
@@ -51,7 +51,7 @@ public class Simulation {
 		{
 			for(int j = 0;j < height;j++)
 			{
-				grid[i][j] = new Block(texture);
+				grid[i][j] = new Block(texture,skin);
 				int color = pixmap.getPixel(i, j);
 				if(color == 0xFF0000FF)
 				{
@@ -197,10 +197,14 @@ public class Simulation {
 			nextMsgBuffer = new Array<Msg>();
 		}
 		
-		public void updateBlockVal(int x,int y,float h)
+		public void setLabel(int x,int y,String h)
 		{
-			h = MathUtils.clamp(h, 0, 1f);
-			grid[x][y].value = h;
+			grid[x][y].label = h;
+		}
+		
+		public void showLabel(int x,int y,boolean toggle)
+		{
+			grid[x][y].showLabel = toggle;
 		}
 	}
 	
@@ -211,16 +215,18 @@ public class Simulation {
 		Function init;
 		Function update;
 		Object[][] agentArgs;
+		NativeObject common = new NativeObject();
 		
 		public ScriptManager(String scriptPath)
 		{
 			cx = Context.enter();
 			scope = cx.initStandardObjects();
 			
-			agentArgs = new Object[agents.size][1];
+			agentArgs = new Object[agents.size][2];
 			for(int i = 0;i < agents.size;i++)
 			{
 				agentArgs[i][0] = agents.get(i);
+				agentArgs[i][1] = common;
 			}
 			
 			try {
