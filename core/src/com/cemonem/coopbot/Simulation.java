@@ -52,7 +52,7 @@ public class Simulation {
 			for(int j = 0;j < height;j++)
 			{
 				grid[i][j] = new Block(texture,skin);
-				int color = pixmap.getPixel(i, j);
+				int color = pixmap.getPixel(i, height - j - 1);
 				if(color == 0xFF0000FF)
 				{
 					Agent agent = new Agent(i,j,false);
