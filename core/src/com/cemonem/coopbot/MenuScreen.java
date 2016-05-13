@@ -92,7 +92,7 @@ public class MenuScreen implements Screen {
 				if(d.getFile() != "null")
 				{
 					scriptPath = d.getDirectory() + d.getFile();
-					prefs.putString("mapPath",scriptPath);
+					prefs.putString("scriptPath",scriptPath);
 					scriptLabel.setText(d.getFile());
 				}
 			}

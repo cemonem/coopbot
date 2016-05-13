@@ -153,7 +153,7 @@ public class Simulation {
 			Array<Pair> result = new Array<Simulation.Pair>();
 			for(Agent a : leaders)
 			{
-				if(a != this) result.add(a.pos);
+				result.add(a.pos);
 			}
 			
 			return result;			
@@ -164,7 +164,7 @@ public class Simulation {
 			Array<Pair> result = new Array<Simulation.Pair>();
 			for(Agent a : agents)
 			{
-				if(a != this) result.add(a.pos);
+				result.add(a.pos);
 			}
 			
 			return result;
@@ -179,7 +179,7 @@ public class Simulation {
 		{
 			for(Agent a : agents)
 			{
-				if(a != this) a.nextMsgBuffer.add(new Msg(key, val));
+				a.nextMsgBuffer.add(new Msg(key, val));
 			}
 		}
 		
@@ -187,7 +187,7 @@ public class Simulation {
 		{
 			for(Agent a : leaders)
 			{
-				if(a != this) a.nextMsgBuffer.add(new Msg(key, val));
+				a.nextMsgBuffer.add(new Msg(key, val));
 			}
 		}
 			
@@ -242,6 +242,7 @@ public class Simulation {
 			ScriptableObject.putProperty(scope,"TARGET",Context.javaToJS(Block.TARGET, scope));
 			ScriptableObject.putProperty(scope,"AGENT",Context.javaToJS(Block.AGENT, scope));
 			ScriptableObject.putProperty(scope,"LEADER",Context.javaToJS(Block.LEADER, scope));
+			ScriptableObject.putProperty(scope,"OBSTACLE",Context.javaToJS(Block.OBSTACLE, scope));
 			ScriptableObject.putProperty(scope, "app", Context.javaToJS(Gdx.app, scope));
 			ScriptableObject.putProperty(scope, "WIDTH", Context.javaToJS(width, scope));
 			ScriptableObject.putProperty(scope, "HEIGHT", Context.javaToJS(height, scope));
